@@ -553,9 +553,7 @@ address a{
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 20px;
-    margin-right: 181px;
-    /* margin-right: 183px; в оригіналі 183п, але тоді комусь кнопка перебігає вниз*/
-
+    margin-right: 183px;
 }
 .join-social-list {
     display: flex;
@@ -585,6 +583,9 @@ address a{
 .join-social-list-link:focus {
     background-color: var(--accent-color);
 }
+.subscribe {
+    display: flex;
+}
 .subscribe-text {
     color:var(--dark-scheme-text-color);
     font-weight: 700;
@@ -605,10 +606,8 @@ address a{
     letter-spacing: 0.03em;
     background-color: var(--dark-scheme-bcg-color);
     color: rgba(255, 255, 255, 0.6);
-
-}
-.subscribe-input::placeholder {
     padding-left: 15px;
+
 }
 .subscribe-button {
     width: 200px;
