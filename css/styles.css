@@ -339,6 +339,9 @@ header {
 .clients-list-link:focus .clients-list-icon{
     fill: var(--accent-color);
 }
+
+/* --------------BODY ------------- */
+/* --------------MODAL ------------- */
 .backdrop {
     position: fixed;
     width: 100%;
@@ -361,6 +364,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    padding: 40px;
 }
 .modal-form-btn-close {
     display: flex;
@@ -374,14 +378,14 @@ header {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    transition: fill var(--transition-prop);
 }
 .modal-form {
-    padding: 40px;
     display: flex;
     flex-direction: column;
 }
-.modal-form-icon-close:hover,
-.modal-form-icon-close:focus {
+.modal-form-btn-close:hover,
+.modal-form-btn-close:focus {
     fill: var(--accent-color);
 }
 .modal-form-input {
@@ -392,6 +396,7 @@ header {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     padding-left: 42px;
+    transition: fill var(--transition-prop), border var(--transition-prop);
 }
 .modal-form-input-label {
     margin-bottom: 4px;
@@ -410,6 +415,7 @@ header {
     border-radius: 4px;
     margin-bottom: 20px;
     padding: 12px 16px;
+    transition: border var(--transition-prop);
 }
 .modal-form-comment::placeholder {
     font-size: 12px;
@@ -440,8 +446,9 @@ header {
 .modal-form-heading {
     display: block;
     font-size: 20px;
+    font-weight: 700;
     line-height: 23px;
-    align-self: center;
+    text-align: center;
     margin-bottom: 12px;
 }
 .modal-form-input-container {
@@ -455,11 +462,11 @@ header {
     border: 1px solid var(--accent-color);
     outline: none;
 }
-
 .modal-form-terms-checkbox {
-    display: block;
+    display: flex;
     align-self: center;
     margin-bottom: 30px;
+    position: relative;
 }
 .modal-form-terms-text {
     line-height: 171%;
@@ -469,8 +476,40 @@ header {
     line-height: 171%;
     color: var(--accent-color);
 }
+.modal-form-icon-unchecked {
+    position: relative;
+    top: 3px;
+    left: 0;
+    display: none;
+    margin-right: 7px;
+    transition: fill var(--transition-prop);
+}
+.modal-form-icon-checked {
+    position: relative;
+    top: 3px;
+    left: 0;
+    display: none;
+    margin-right: 7px;
+    transition: ;
+}
+.modal-form-checkbox-input:not(:checked)+.modal-form-icon-unchecked {
+    display: block;
+}
+.modal-form-checkbox-input:checked + .modal-form-icon-unchecked + .modal-form-icon-checked {
+    display: block;
+    }
+/* .modal-form-checkbox-input {
+    position: absolute;
+    appearance: none;
+} */
+.modal-form-checkbox-input:focus + .modal-form-icon-unchecked {
+    fill: var(--accent-color);
+}
+.modal-form-checkbox-input:focus+.modal-form-icon-unchecked+.modal-form-icon-checked {
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.5); 
+}
 
-/* --------------BODY ------------- */
+/* --------------MODAL ------------- */
 /* --------------FOOTER ------------- */
 footer {
     background-color: var(--dark-scheme-bcg-color);
@@ -514,7 +553,9 @@ address a{
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 20px;
-    margin-right: 183px;
+    margin-right: 181px;
+    /* margin-right: 183px; в оригіналі 183п, але тоді комусь кнопка перебігає вниз*/
+
 }
 .join-social-list {
     display: flex;
