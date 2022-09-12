@@ -553,13 +553,10 @@ address a{
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 20px;
-    margin-right: 183px;
 }
 .join-social-list {
     display: flex;
     gap: 10px;
-    justify-content: left;
-    padding-bottom: 30px;
 }
 
 .join-social-list-icon {
@@ -583,7 +580,10 @@ address a{
 .join-social-list-link:focus {
     background-color: var(--accent-color);
 }
-.subscribe {
+.subscribe-container {
+    margin-left: auto;
+}
+.subscribe-form {
     display: flex;
 }
 .subscribe-text {
